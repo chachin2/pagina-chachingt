@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Consultoría estratégica, asesoría con seguimiento y servicios técnicos para empresas en Guatemala. Web, sistemas, facturación y más —según tu rubro y operación.">
+    <title>Servicios Chachin</title>
+    <!-- Open Graph: al publicar, sustituye og:url y og:image por la URL final de tu sitio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Servicios Chachin">
+    <meta property="og:description" content="Consultoría estratégica, asesoría con seguimiento y servicios técnicos. Web, sistemas, facturación y más según tu rubro en Guatemala.">
+    <meta property="og:image" content="https://chachingt.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Google Fonts: Lexend + Source Sans 3 (design-system/servicios-chachin/MASTER.md) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons para iconos modernos -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css?v=50">
+    <link rel="stylesheet" href="saas.css?v=3">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
+
+    <!-- Fondo: red generativa animada (canvas + script.js) -->
+    <div class="page-network" aria-hidden="true">
+        <canvas class="page-network-canvas"></canvas>
+    </div>
+
+    <!-- Navbar: one-page + enlaces a páginas de detalle (SEO) -->
+    <nav class="floating-nav floating-nav--site" aria-label="Principal">
+        <a href="#top" class="nav-logo">
+            <img src="logo.png" alt="Logo Servicios Chachin" class="logo-3d" width="40" height="40">
+        </a>
+        <div class="nav-panel" id="site-nav-menu">
+            <div class="nav-links">
+                <a href="#top">Inicio</a>
+                <a href="#plataforma">Plataforma</a>
+                <a href="consultoria.html">Consultoría</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="servicios.html">Desarrollo</a>
+                <a href="preguntas-frecuentes.html" title="Preguntas frecuentes">Preguntas</a>
+                <a href="#soluciones">Soluciones</a>
+                <a href="demos.html">Demos</a>
+                <a href="resenas.html">Reseñas</a>
+                <a href="desarrollador-google.html">Perfil Google</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa" target="_blank" rel="noopener noreferrer" class="btn-nav">Contactar</a>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Abrir o cerrar menú">
+                <span class="nav-toggle-bars" aria-hidden="true">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section Principal -->
+    <header class="hero" id="top">
+        <div class="hero-mesh" aria-hidden="true">
+            <svg class="hero-mesh-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="meshGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:0.35" />
+                    </linearGradient>
+                </defs>
+                <g fill="none" stroke="url(#meshGrad2)" stroke-width="0.78" opacity="0.78">
+                    <path d="M80,120 L240,80 L400,140 L560,90 L720,160" />
+                    <path d="M60,280 L220,240 L380,300 L540,250 L760,320" />
+                    <path d="M100,420 L260,380 L420,440 L600,400 L740,480" />
+                    <path d="M240,80 L220,240 L260,380" />
+                    <path d="M400,140 L380,300 L420,440" />
+                    <path d="M560,90 L540,250 L600,400" />
+                    <path d="M720,160 L760,320 L740,480" />
+                </g>
+                <g fill="none" stroke="url(#meshGrad2)" stroke-width="0.58" opacity="0.55" stroke-linecap="round">
+                    <path d="M120,200 L280,165 L440,205 L600,148 L760,205" />
+                    <path d="M95,360 L255,325 L415,385 L575,318 L735,368" />
+                    <path d="M130,500 L290,465 L450,515 L610,452 L770,505" />
+                    <path d="M180,95 L165,280 L195,455" />
+                    <path d="M620,115 L605,295 L635,495" />
+                    <path d="M320,260 L500,115 M260,340 L420,250 M520,355 L680,265" />
+                </g>
+                <g fill="#ffffff">
+                    <circle cx="240" cy="80" r="3" opacity="0.9" />
+                    <circle cx="400" cy="140" r="3" opacity="0.9" />
+                    <circle cx="560" cy="90" r="3" opacity="0.9" />
+                    <circle cx="380" cy="300" r="2.5" opacity="0.85" />
+                    <circle cx="600" cy="400" r="2.5" opacity="0.85" />
+                </g>
+                <g fill="#15803d">
+                    <circle cx="220" cy="240" r="2.5" opacity="0.85" />
+                    <circle cx="420" cy="440" r="2.5" opacity="0.85" />
+                </g>
+                <g fill="#0ea5e9">
+                    <circle cx="720" cy="160" r="2.2" opacity="0.8" />
+                </g>
+            </svg>
+        </div>
+        <div class="container reveal">
+            <div class="hero-brand">
+                <div class="hero-logo-wrap">
+                    <span class="hero-ripple" aria-hidden="true"></span>
+                    <span class="hero-ripple hero-ripple--2" aria-hidden="true"></span>
+                    <div class="hero-logo-ring">
+                        <img src="logo.png" alt="Marca Servicios Chachin" class="hero-logo-img" width="120" height="120">
+                    </div>
+                </div>
+            </div>
+            <p class="hero-kicker reveal">
+                <span class="hero-kicker-pill"><i class="ph ph-sparkle" aria-hidden="true"></i> Tecnología con enfoque empresarial · Guatemala</span>
+            </p>
+            <h1>Consultoría y <span class="text-gradient">soluciones tecnológicas</span> para tu empresa</h1>
+            <p class="hero-intro">Consejo claro, <strong>implementación estratégica</strong> (qué hacer primero y por qué) y, cuando hace falta, <strong>seguimiento</strong> alineado con tu equipo. No solo desarrollo web: acompañamos negocios reales con operación, proveedores y metas concretas.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/50232533214?text=Hola,%20quisiera%20agendar%20una%20Consulta%20Gratis%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    Consulta gratis
+                </a>
+                <a href="#plataforma" class="btn btn-secondary">
+                    <i class="ph ph-squares-four" aria-hidden="true"></i> Plataforma de servicios
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenido-principal" tabindex="-1">
+    <section class="trust-strip" aria-label="Por qué trabajar con nosotros">
+        <div class="container trust-strip-inner">
+            <div class="trust-item">
+                <i class="ph ph-clock" aria-hidden="true"></i>
+                <span>Respuesta en menos de 24 horas</span>
+            </div>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <div class="trust-item">
+                <i class="ph ph-target" aria-hidden="true"></i>
+                <span>Proyectos adaptados a tu presupuesto</span>
+            </div>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <div class="trust-item">
+                <i class="ph ph-headset" aria-hidden="true"></i>
+                <span>Acompañamiento después de la entrega</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gdev-inline-wrap reveal">
+        <div class="container">
+            <p class="gdev-inline" id="dev-profile-teaser-title">
+                <i class="ph ph-identification-badge gdev-inline-icon" aria-hidden="true"></i>
+                <span class="gdev-inline-text"><strong>Google Developer</strong> — perfil e insignias en página dedicada o en <a href="https://g.dev/chachin222g" target="_blank" rel="noopener noreferrer">g.dev/chachin222g</a>.</span>
+                <a href="desarrollador-google.html" class="gdev-inline-link">Ver más</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Plataforma tipo SaaS: Bento + dashboard ilustrativo -->
+    <section id="plataforma" class="section section--saas section--alt" aria-labelledby="saas-title">
+        <div class="container">
+            <div class="section-head reveal saas-section-head section-head--tight">
+                <h2 class="section-title" id="saas-title">Plataforma de servicios</h2>
+                <p class="section-subtitle section-subtitle--short">Diagnóstico, implementación y operación con la misma lógica que en proyectos reales.</p>
+            </div>
+
+            <div class="bento-grid" role="list">
+                <a href="consultoria.html" class="bento-card bento-card--compact reveal" role="listitem" style="transition-delay: 0.05s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-briefcase"></i></span>
+                    <h3 class="bento-card__title">Consultoría administrativa</h3>
+                    <p class="bento-card__desc">Priorización, alcance y ruta antes de invertir.</p>
+                </a>
+                <a href="servicios.html" class="bento-card bento-card--compact reveal" role="listitem" style="transition-delay: 0.1s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-gear-fine"></i></span>
+                    <h3 class="bento-card__title">Automatización tecnológica</h3>
+                    <p class="bento-card__desc">Procesos digitales mantenibles.</p>
+                </a>
+                <a href="servicios.html" class="bento-card bento-card--compact reveal" role="listitem" style="transition-delay: 0.15s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-link-simple"></i></span>
+                    <h3 class="bento-card__title">Integración de sistemas</h3>
+                    <p class="bento-card__desc">Datos y herramientas sin duplicar trabajo.</p>
+                </a>
+                <a href="servicios.html" class="bento-card bento-card--compact reveal bento-card--wide" role="listitem" style="transition-delay: 0.2s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-code"></i></span>
+                    <h3 class="bento-card__title">Desarrollo de software</h3>
+                    <p class="bento-card__desc">Web y sistemas a medida por fases.</p>
+                </a>
+                <a href="consultoria.html" class="bento-card bento-card--compact reveal bento-card--wide" role="listitem" style="transition-delay: 0.25s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-arrows-clockwise"></i></span>
+                    <h3 class="bento-card__title">Optimización de procesos</h3>
+                    <p class="bento-card__desc">Cuellos de botella y mejoras medibles.</p>
+                </a>
+                <a href="asesoria.html" class="bento-card bento-card--compact reveal bento-card--full" role="listitem" style="transition-delay: 0.3s;">
+                    <span class="bento-card__icon" aria-hidden="true"><i class="ph ph-chart-line"></i></span>
+                    <h3 class="bento-card__title">Inteligencia operativa</h3>
+                    <p class="bento-card__desc">Seguimiento por etapas y métricas claras.</p>
+                </a>
+            </div>
+
+            <nav class="saas-phase-links saas-phase-links--inline reveal" aria-label="Profundizar por fase">
+                <span class="saas-phase-links__label">Profundizar:</span>
+                <a href="consultoria.html">Consultoría</a>
+                <span class="saas-phase-links__sep" aria-hidden="true">·</span>
+                <a href="asesoria.html">Asesoría</a>
+                <span class="saas-phase-links__sep" aria-hidden="true">·</span>
+                <a href="servicios.html">Desarrollo</a>
+                <span class="saas-phase-links__sep" aria-hidden="true">·</span>
+                <a href="#soluciones">Ejemplos</a>
+            </nav>
+        </div>
+    </section>
+
+    <section id="sectores" class="section sectors-section section--alt" aria-labelledby="sectores-title">
+        <div class="container">
+            <div class="section-head reveal">
+                <p class="section-eyebrow">Alcance real</p>
+                <h2 class="section-title" id="sectores-title">Sectores que solemos acompañar</h2>
+                <p class="section-subtitle">El trabajo va más allá de “hacer una página”: partimos de <strong>operación, proveedores y el día a día</strong>. Estos son ejemplos, no un catálogo cerrado —si tu caso no aparece, <a href="#contacto">escríbenos</a> y lo vemos con honestidad.</p>
+            </div>
+            <ul class="sectors-grid reveal" role="list">
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-1" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Menús, pedidos y caja alineados a cómo trabajas hoy." data-line2="Priorizamos lo que tu equipo puede mantener sin sumar caos operativo."><i class="ph ph-fork-knife" aria-hidden="true"></i> <span class="sector-chip-label">Restaurantes y comida</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-2" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Catálogo y cuadre antes de automatizar de más." data-line2="Coordinamos con tu contador o proveedor FEL cuando aplica."><i class="ph ph-receipt" aria-hidden="true"></i> <span class="sector-chip-label">Facturación y punto de venta</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-3" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Inventario y canales (mostrador + WhatsApp) sin datos contradictorios." data-line2="Buscamos que digital y bodega hablen el mismo idioma."><i class="ph ph-storefront" aria-hidden="true"></i> <span class="sector-chip-label">Comercio y retail</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-4" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Diagnóstico y prioridades para no pagar dos veces lo mismo." data-line2="Consultoría antes de proyectos grandes si aún no hay criterio claro."><i class="ph ph-buildings" aria-hidden="true"></i> <span class="sector-chip-label">PyME en crecimiento</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-5" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Cotizaciones y materiales ordenados; menos presupuestos perdidos en chats." data-line2="Web o formularios según el volumen real de trabajo."><i class="ph ph-hammer" aria-hidden="true"></i> <span class="sector-chip-label">Carpintería y taller</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-6" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Transparencia con el cliente y menos retrabajo entre campo y oficina." data-line2="Herramientas acotadas al tamaño real del negocio."><i class="ph ph-hard-hat" aria-hidden="true"></i> <span class="sector-chip-label">Construcción y obra</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-7" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Credibilidad online y solicitudes registradas, sin depender solo del teléfono." data-line2="Ajustamos la propuesta al volumen de visitas y al tamaño del equipo."><i class="ph ph-lightning" aria-hidden="true"></i> <span class="sector-chip-label">Electricidad y servicios técnicos</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-8" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Clientes recurrentes y rutas: recordatorios sin complicar al técnico." data-line2="Simple y mantenible para quien usa la herramienta en la obra."><i class="ph ph-wrench" aria-hidden="true"></i> <span class="sector-chip-label">Mantenimiento y oficios</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-9" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Sitios y flujos que transmiten confianza y orden." data-line2="Respetamos normativa profesional y el tono que tu clientela espera."><i class="ph ph-briefcase" aria-hidden="true"></i> <span class="sector-chip-label">Servicios profesionales</span></button>
+                </li>
+                <li class="sector-chip-item" role="none">
+                    <button type="button" class="sector-chip" id="sector-chip-10" aria-expanded="false" aria-controls="sector-detail-panel" data-line1="Si no encaja en una casilla, conversamos tu operación con franqueza." data-line2="Referidos transparentes si el caso no es nuestro fuerte."><i class="ph ph-dots-three-circle" aria-hidden="true"></i> <span class="sector-chip-label">Otros — consultar</span></button>
+                </li>
+            </ul>
+            <div class="sector-detail-panel" id="sector-detail-panel" role="region" aria-labelledby="sector-detail-title" aria-hidden="true" hidden>
+                <p class="sector-detail-title" id="sector-detail-title"></p>
+                <p class="sector-detail-line sector-detail-line1"></p>
+                <p class="sector-detail-line sector-detail-line2"></p>
+            </div>
+            <div class="sectors-teaser-actions reveal">
+                <a href="preguntas-frecuentes.html" class="btn btn-secondary">Preguntas frecuentes</a>
+                <a href="#contacto" class="btn btn-primary">Contactar</a>
+            </div>
+            <p class="sectors-note reveal">¿Tu sector no está en la lista? Muchas pymes comparten retos parecidos. Revisa la <a href="preguntas-frecuentes.html#faq-mi-rubro">pregunta sobre “mi rubro”</a> o <a href="#contacto">escríbenos</a> directamente.</p>
+        </div>
+    </section>
+
+    <!-- Sección Ejemplos de Soluciones -->
+    <section id="soluciones" class="section section--alt">
+        <div class="container">
+            <div class="section-head reveal">
+                <p class="section-eyebrow">Casos reales</p>
+                <h2 class="section-title">Soluciones que ya están funcionando</h2>
+                <p class="section-subtitle">Webs, puntos de venta y sistemas administrativos pensados para negocios que necesitan claridad y control.</p>
+            </div>
+
+            <div class="solutions-grid">
+                <!-- Solución 1: Página web -->
+                <div class="solution-card reveal" style="transition-delay: 0.1s;">
+                    <div class="solution-img">
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del ejemplo de página web">&#10094;</button>
+                        <div class="carousel-container">
+                            <img src="pag1.jpeg" alt="Ejemplo de página web para negocio, vista 1" class="bg-img" loading="lazy">
+                            <img src="pag3.jpeg" alt="Ejemplo de página web para negocio, vista 2" class="bg-img" loading="lazy">
+                            <img src="pag2.jpeg" alt="Ejemplo de página web para negocio, vista 3" class="bg-img" loading="lazy">
+                        </div>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del ejemplo de página web">&#10095;</button>
+                        <i class="ph ph-browser"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Página web</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20crear%20una%20Página%20Web%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+
+                <!-- Solución 2: Sistema de ventas -->
+                <div class="solution-card reveal" style="transition-delay: 0.3s;">
+                    <div class="solution-img">
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del sistema de ventas">&#10094;</button>
+                        <div class="carousel-container">
+                            <img src="vent1.jpeg" alt="Ejemplo de sistema de ventas, vista 1" class="bg-img" loading="lazy">
+                            <img src="vent2.jpeg" alt="Ejemplo de sistema de ventas, vista 2" class="bg-img" loading="lazy">
+                            <img src="vent3.jpeg" alt="Ejemplo de sistema de ventas, vista 3" class="bg-img" loading="lazy">
+                        </div>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del sistema de ventas">&#10095;</button>
+                        <i class="ph ph-shopping-cart"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Sistema de ventas</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20necesito%20un%20Sistema%20de%20Ventas%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+
+                <!-- Solución 3: Sistema administrativo -->
+                <div class="solution-card reveal" style="transition-delay: 0.4s;">
+                    <div class="solution-img">
+                        <button type="button" class="carousel-btn prev" aria-label="Imagen anterior del sistema administrativo">&#10094;</button>
+                        <div class="carousel-container">
+                            <img src="ad1.jpeg" alt="Ejemplo de sistema administrativo, vista 1" class="bg-img" loading="lazy">
+                            <img src="ad2.jpeg" alt="Ejemplo de sistema administrativo, vista 2" class="bg-img" loading="lazy">
+                            <img src="ad3.jpeg" alt="Ejemplo de sistema administrativo, vista 3" class="bg-img" loading="lazy">
+                        </div>
+                        <button type="button" class="carousel-btn next" aria-label="Siguiente imagen del sistema administrativo">&#10095;</button>
+                        <i class="ph ph-chart-bar"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h4>Sistema administrativo</h4>
+                        <a href="https://wa.me/50232533214?text=Hola,%20me%20interesa%20adquirir%20un%20Sistema%20Administrativo%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="btn">Quiero algo como esto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section section--alt section--contact">
+        <div class="container reveal contact-inner">
+            <h2 class="section-title section-title--contact">¿Listo para dar el siguiente paso?</h2>
+            <p class="contact-lead">Cuéntame qué necesitas: la primera conversación es sin compromiso y te respondemos por el canal que prefieras.</p>
+            <p class="contact-note"><i class="ph ph-shield-check" aria-hidden="true"></i> Canales oficiales · Atención personalizada</p>
+            <div class="contact-actions">
+                <a href="mailto:info@chachingt.com" class="btn btn-secondary btn-contact">
+                    <i class="ph ph-envelope-simple contact-icon"></i> info@chachingt.com
+                </a>
+                <a href="https://wa.me/50232533214?text=Hola,%20vengo%20de%20tu%20sitio%20web%20y%20me%20interesan%20tus%20servicios"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-whatsapp">
+                    <i class="ph ph-whatsapp-logo contact-icon"></i> WhatsApp (+502 3253 3214)
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="site-footer">
+        <img src="logo.png" alt="Servicios Chachin" class="footer-logo" width="48" height="48">
+        <p class="footer-copy">&copy; 2026 Servicios Chachin. Todos los derechos reservados.</p>
+    </footer>
+
+    <button type="button" class="scroll-top" id="scroll-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+        <i class="ph ph-caret-double-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Lightbox Modal para ver imágenes completas -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+        <button type="button" class="lightbox-close" aria-label="Cerrar vista ampliada">&times;</button>
+        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Imagen anterior">&#10094;</button>
+        <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
+        <button type="button" class="lightbox-btn lightbox-next" aria-label="Siguiente imagen">&#10095;</button>
+    </div>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ProfessionalService","name":"Servicios Chachin","url":"https://chachingt.com/","email":"info@chachingt.com","telephone":"+50232533214","description":"Consultoría estratégica, asesoría con seguimiento y servicios técnicos para empresas en Guatemala: web, sistemas, facturación y soluciones según rubro y operación.","areaServed":{"@type":"Country","name":"Guatemala"},"image":"https://chachingt.com/logo.png","sameAs":["https://g.dev/chachin222g"]}
+    </script>
+
+    <!-- Elfsight AI Chatbot -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-7cd45109-2ff4-4e49-b305-5c87a49d9f51" data-elfsight-app-lazy></div>
+
+    <script src="script.js?v=27"></script>
+</body>
+
+</html>
+
