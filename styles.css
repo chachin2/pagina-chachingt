@@ -2116,7 +2116,7 @@ main a[href]:where(:not([class*="btn"]):not(.logo-3d):not(.nav-logo):not(.footer
   }
 }
 
-/* --- Reseñas Google (Netlify function) --- */
+/* --- Reseñas Google (Cloudflare Pages /api/reviews) --- */
 .reviews-widget-wrap {
   max-width: 900px;
   margin: 8px auto 0;

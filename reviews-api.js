@@ -1,6 +1,6 @@
 /**
- * Reseñas vía Netlify Function. Si cambias de hosting, define antes:
- * window.REVIEWS_FUNCTION_URL = 'https://tu-sitio.netlify.app/.netlify/functions/reviews';
+ * Reseñas vía Cloudflare Pages Function (/api/reviews).
+ * Override: window.REVIEWS_FUNCTION_URL = 'https://tu-dominio.com/api/reviews';
  */
 (function () {
   function reviewsUrl() {
@@ -10,7 +10,7 @@
     ) {
       return window.REVIEWS_FUNCTION_URL;
     }
-    return "/.netlify/functions/reviews";
+    return "/api/reviews";
   }
 
   function reviewStars(rating) {
@@ -108,17 +108,17 @@
             _ref.snippet && /^\s*</.test(_ref.snippet);
           if (st === 404) {
             statusEl.textContent =
-              "404: no existe la función en el servidor. Sube netlify.toml + carpeta netlify/functions/reviews.js en el mismo despliegue, o en Netlify → Functions comprueba que aparezca «reviews».";
+              "404: no existe /api/reviews. En Cloudflare Pages debe existir functions/api/reviews.js y un despliegue con Functions activas.";
           } else if (looksHtml && (st === 200 || st === 304)) {
             statusEl.textContent =
-              "El servidor devolvió una página HTML en lugar de datos. Muy probable: en Netlify (Domain settings → Rewrites/Redirects) tienes una regla tipo «/* → /index.html». Elimínala para sitios con varias .html o excluye /.netlify/functions/*. Prueba abrir en el navegador: " +
+              "El servidor devolvió HTML en lugar de JSON. Revisa en Cloudflare que una regla «/* → /index.html» no capture /api/*. Prueba: " +
               window.location.origin +
-              "/.netlify/functions/reviews — debe verse JSON, no tu web.";
+              "/api/reviews (debe verse JSON).";
           } else {
             statusEl.textContent =
               "Respuesta no válida (código " +
               st +
-              "). Abre la consola de Netlify (Functions → reviews → logs) y revisa variables GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID.";
+              "). Revisa en Cloudflare (Logs) y variables GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID.";
           }
           return;
         }
@@ -129,7 +129,7 @@
 
         if (data && data.error === "missing_config") {
           statusEl.textContent =
-            "Faltan variables en Netlify: GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID (Site settings → Environment variables). Luego pulsa «Trigger deploy».";
+            "Faltan variables en Cloudflare Pages: GOOGLE_MAPS_API_KEY y GOOGLE_PLACE_ID (Settings → Variables). Luego redespliega.";
           return;
         }
 
