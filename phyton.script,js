@@ -1,0 +1,21 @@
+import requests
+
+url = "https://api.cloudflare.com/client/v4/accounts/{}/vectorize/v2/indexes".format("your-account-id")
+
+headers = {
+    "Authorization": "Bearer <your-api-token>"
+}
+
+body = {
+  "name": "demo-index",
+  "description": "some index description",
+  "config": {
+    "dimensions": 1024,
+    "metric": "euclidean"
+  },
+}
+
+resp = requests.post(url, headers=headers, json=body)
+
+print('Status Code:', resp.status_code)
+print('Response JSON:', resp.json())
