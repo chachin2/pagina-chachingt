@@ -392,6 +392,7 @@ function initHeroStageTilt() {
 
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var compactViewport = window.matchMedia("(max-width: 979px)");
     var frame = 0;
 
     function resetStage() {
@@ -413,7 +414,7 @@ function initHeroStageTilt() {
     }
 
     function onMove(event) {
-        if (reduceMotion.matches || !finePointer.matches) return;
+        if (reduceMotion.matches || !finePointer.matches || compactViewport.matches) return;
 
         var rect = stage.getBoundingClientRect();
         var x = (event.clientX - rect.left) / rect.width;
@@ -436,7 +437,7 @@ function initHeroStageTilt() {
 
     stage.addEventListener("pointermove", onMove);
     stage.addEventListener("pointerenter", function () {
-        if (!reduceMotion.matches && finePointer.matches) {
+        if (!reduceMotion.matches && finePointer.matches && !compactViewport.matches) {
             stage.classList.add("is-active");
         }
     });
@@ -459,6 +460,12 @@ function initHeroStageTilt() {
     } else if (finePointer.addListener) {
         finePointer.addListener(resetStage);
     }
+
+    if (compactViewport.addEventListener) {
+        compactViewport.addEventListener("change", resetStage);
+    } else if (compactViewport.addListener) {
+        compactViewport.addListener(resetStage);
+    }
 }
 
 function initMagneticButtons() {
@@ -467,6 +474,7 @@ function initMagneticButtons() {
 
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var compactViewport = window.matchMedia("(max-width: 979px)");
 
     function resetButton(button) {
         button.classList.remove("is-magnetic-active");
@@ -475,7 +483,7 @@ function initMagneticButtons() {
 
     buttons.forEach(function (button) {
         button.addEventListener("pointermove", function (event) {
-            if (reduceMotion.matches || !finePointer.matches) return;
+            if (reduceMotion.matches || !finePointer.matches || compactViewport.matches) return;
 
             var rect = button.getBoundingClientRect();
             var x = event.clientX - rect.left - rect.width / 2;
@@ -511,6 +519,12 @@ function initMagneticButtons() {
         finePointer.addEventListener("change", resetAll);
     } else if (finePointer.addListener) {
         finePointer.addListener(resetAll);
+    }
+
+    if (compactViewport.addEventListener) {
+        compactViewport.addEventListener("change", resetAll);
+    } else if (compactViewport.addListener) {
+        compactViewport.addListener(resetAll);
     }
 }
 
