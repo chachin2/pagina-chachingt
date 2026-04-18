@@ -386,6 +386,134 @@ function initScrollTopButton() {
     });
 }
 
+function initHeroStageTilt() {
+    var stage = document.querySelector("[data-tilt]");
+    if (!stage) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var frame = 0;
+
+    function resetStage() {
+        stage.classList.remove("is-active");
+        stage.style.transform = "";
+        stage.querySelectorAll("[data-depth]").forEach(function (layer) {
+            layer.style.transform = "";
+        });
+    }
+
+    function applyDepth(xRatio, yRatio) {
+        stage.querySelectorAll("[data-depth]").forEach(function (layer) {
+            var depth = Number(layer.getAttribute("data-depth") || 0);
+            var moveX = xRatio * depth;
+            var moveY = yRatio * depth;
+            layer.style.transform =
+                "translate3d(" + moveX.toFixed(2) + "px, " + moveY.toFixed(2) + "px, " + (depth * 1.2).toFixed(2) + "px)";
+        });
+    }
+
+    function onMove(event) {
+        if (reduceMotion.matches || !finePointer.matches) return;
+
+        var rect = stage.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width;
+        var y = (event.clientY - rect.top) / rect.height;
+        var rotateX = (0.5 - y) * 10;
+        var rotateY = (x - 0.5) * 14;
+        var depth = Number(stage.getAttribute("data-tilt-depth") || 16);
+        var shiftX = (x - 0.5) * depth;
+        var shiftY = (y - 0.5) * depth;
+
+        stage.classList.add("is-active");
+
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(function () {
+            stage.style.transform =
+                "perspective(1400px) rotateX(" + rotateX.toFixed(2) + "deg) rotateY(" + rotateY.toFixed(2) + "deg) translate3d(" + shiftX.toFixed(2) + "px, " + shiftY.toFixed(2) + "px, 0)";
+            applyDepth((x - 0.5) * 2.2, (y - 0.5) * 2.2);
+        });
+    }
+
+    stage.addEventListener("pointermove", onMove);
+    stage.addEventListener("pointerenter", function () {
+        if (!reduceMotion.matches && finePointer.matches) {
+            stage.classList.add("is-active");
+        }
+    });
+    stage.addEventListener("pointerleave", function () {
+        if (frame) {
+            window.cancelAnimationFrame(frame);
+            frame = 0;
+        }
+        resetStage();
+    });
+
+    if (reduceMotion.addEventListener) {
+        reduceMotion.addEventListener("change", resetStage);
+    } else if (reduceMotion.addListener) {
+        reduceMotion.addListener(resetStage);
+    }
+
+    if (finePointer.addEventListener) {
+        finePointer.addEventListener("change", resetStage);
+    } else if (finePointer.addListener) {
+        finePointer.addListener(resetStage);
+    }
+}
+
+function initMagneticButtons() {
+    var buttons = document.querySelectorAll("[data-magnetic]");
+    if (!buttons.length) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    function resetButton(button) {
+        button.classList.remove("is-magnetic-active");
+        button.style.transform = "";
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener("pointermove", function (event) {
+            if (reduceMotion.matches || !finePointer.matches) return;
+
+            var rect = button.getBoundingClientRect();
+            var x = event.clientX - rect.left - rect.width / 2;
+            var y = event.clientY - rect.top - rect.height / 2;
+            var moveX = x * 0.11;
+            var moveY = y * 0.18;
+
+            button.classList.add("is-magnetic-active");
+            button.style.transform =
+                "translate3d(" + moveX.toFixed(2) + "px, " + moveY.toFixed(2) + "px, 0)";
+        });
+
+        button.addEventListener("pointerleave", function () {
+            resetButton(button);
+        });
+
+        button.addEventListener("blur", function () {
+            resetButton(button);
+        });
+    });
+
+    function resetAll() {
+        buttons.forEach(resetButton);
+    }
+
+    if (reduceMotion.addEventListener) {
+        reduceMotion.addEventListener("change", resetAll);
+    } else if (reduceMotion.addListener) {
+        reduceMotion.addListener(resetAll);
+    }
+
+    if (finePointer.addEventListener) {
+        finePointer.addEventListener("change", resetAll);
+    } else if (finePointer.addListener) {
+        finePointer.addListener(resetAll);
+    }
+}
+
 // Inicializar scripts al cargar la página
 function initSectorChips() {
     var panel = document.getElementById("sector-detail-panel");
@@ -449,6 +577,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileNav();
     initPageNetworkCanvas();
     initScrollTopButton();
+    initHeroStageTilt();
+    initMagneticButtons();
     initSectorChips();
     unregisterLegacyServiceWorkers();
 
