@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/clearvfg/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - export DEPLOYPATH=/cleabvfg//public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
